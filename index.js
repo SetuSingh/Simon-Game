@@ -99,11 +99,11 @@ $(".btn").on("click",function(event){
 
 
         if (count != userPattern.length){
-            if (gameover! ==true){
+            if (gameover1 == true){
                 gameover();
             }
                 
-            else if (gameover == false){console.log("waiting for moreclicks!");}
+            else if (gameover1 == false){console.log("waiting for moreclicks!");}
             if (userPattern.length == 0){
                 upl = 1;
             }
@@ -125,7 +125,7 @@ $(".btn").on("click",function(event){
                 }
                 else if (userPattern[g] != gamePattern[g]){
                     sounds("wrong");
-                    gameover = true;
+                    gameover1 = true;
                     gameover();
                 }
             }

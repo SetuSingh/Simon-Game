@@ -13,6 +13,7 @@ var count = 1;
 var gameover1 = false;
 var levelCount = 1;
 
+
 $("h1").on("click",function(){
     
     gameover1 = false;
@@ -23,7 +24,6 @@ $("h1").on("click",function(){
     
 
 });
-
 
 $(document).on("keypress",function(){
     
@@ -97,13 +97,11 @@ $(".btn").on("click",function(event){
 
         
 
-
-        if (count != userPattern.length){
-            if (gameover1 == true){
-                gameover();
-            }
-                
-            else if (gameover1 == false){console.log("waiting for moreclicks!");}
+        if (gameover1 == true){
+            gameover();
+        }
+        else if (count != userPattern.length && gameover1 != true){
+            console.log("waiting for moreclicks!");
             if (userPattern.length == 0){
                 upl = 1;
             }
@@ -112,6 +110,7 @@ $(".btn").on("click",function(event){
             }
             if(userPattern[upl-1] != gamePattern[upl-1]){
                 sounds("wrong");
+                gameover1 = true;
             }
             else{
 
@@ -125,7 +124,6 @@ $(".btn").on("click",function(event){
                 }
                 else if (userPattern[g] != gamePattern[g]){
                     sounds("wrong");
-                    gameover1 = true;
                     gameover();
                 }
             }
@@ -145,8 +143,9 @@ $(".btn").on("click",function(event){
 });
 
 function gameover(){
-    $("h1").text("Game Over, Your score was "+ levelCount + " Refresh or Press Any KEY to restart.");
+    $("h1").text("Game Over, Your score was "+ (levelCount -1)  + " Refresh or Press Any KEY to restart.");
     gameover1 = true;
+    alert("game over");
     gamePattern = [];
     userPattern = [];
     click = false;

@@ -13,6 +13,18 @@ var count = 1;
 var gameover1 = false;
 var levelCount = 1;
 
+$("h1).on("click",function(){
+    
+    gameover1 = false;
+    count = 1;
+    randomColorchooser();
+    click = true;
+    alert(gamePattern);
+    
+
+});
+
+
 $(document).on("keypress",function(){
     
     gameover1 = false;

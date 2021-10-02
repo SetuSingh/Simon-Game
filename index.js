@@ -130,7 +130,6 @@ $(".btn").on("click",function(event){
 function gameover(){
     $("h1").text("Game Over, Your score was "+ levelCount + " Refresh or Press Any KEY to restart.");
     gameover1 = true;
-    alert("game over");
     gamePattern = [];
     userPattern = [];
     click = false;
